@@ -9,8 +9,8 @@ genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 # Create a Generative Model instance
 model = genai.GenerativeModel('gemini-1.5-flash-002')
 
-# Title of the Streamlit app
-st.title("Water Resource Assistant")
+# Title of the Streamlit app with emojis
+st.title("🌊 Water Resource Assistant 💧")
 
 # Initialize session state for chat messages
 if "messages" not in st.session_state:
@@ -22,7 +22,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Input box for user query
-if prompt := st.chat_input("Ask me anything about mental health (e.g., 'What are some coping strategies for anxiety?')"):
+if prompt := st.chat_input("Ask me anything about water resources (e.g., 'What are the current water usage trends?')"):
     # Add user message to session state
     st.session_state.messages.append({"role": "user", "content": prompt})
     
